@@ -22,6 +22,9 @@ AfterViewInit, DoCheck, OnDestroy {
      }
   ]
 
+  // property binding
+  isDisable = true
+
   constructor(){
     console.log('costruttore')
   }
