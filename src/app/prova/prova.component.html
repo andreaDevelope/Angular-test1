@@ -1,3 +1,4 @@
+<!-- card -->
 <mat-card>
   <mat-card-header>
     <mat-card-title>{{ cani[0].nome }}</mat-card-title>
@@ -11,11 +12,19 @@
     <p>{{ cani[0].descrizione }}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+    <!-- esempio di event binding -->
+    <button mat-button (click)="like()">LIKE</button>
+    <button mat-button (click)="share()">SHARE</button>
   </mat-card-actions>
 </mat-card>
 
+<!-- input -->
+<mat-form-field class="example-full-width">
+  <mat-label>Favorite food</mat-label>
+  <input matInput placeholder="Ex. Pizza" (input)="input($event)" />
+</mat-form-field>
+
+<!-- bottoni -->
 <section>
   <div class="example-button-row">
     <button mat-raised-button>Basic</button>

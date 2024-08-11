@@ -1,12 +1,13 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnDestroy, OnInit } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'; // Importa il modulo qui
 import { MatCardModule } from '@angular/material/card'; // Importa il modulo qui
-import {MatButtonModule} from '@angular/material/button'; //import bottoni
+import {MatButtonModule} from '@angular/material/button'; //bottoni
+import {MatInputModule} from '@angular/material/input'; //inpput
 
 @Component({
   selector: 'app-prova',
   standalone: true,
-  imports: [MatSlideToggleModule, MatCardModule, MatButtonModule], // Combina entrambi i moduli qui
+  imports: [MatSlideToggleModule, MatCardModule, MatButtonModule, MatInputModule], // Combina entrambi i moduli qui
   templateUrl: './prova.component.html',
   styleUrls: ['./prova.component.css'] // Correzione: styleUrl -> styleUrls
 })
@@ -29,6 +30,24 @@ AfterViewInit, DoCheck, OnDestroy {
     console.log('costruttore')
   }
 
+
+  // event binding
+  likeCount = 0
+
+  like(){
+    this.likeCount++
+    console.log(this.likeCount)
+  }
+
+  share(){
+    console.log('hai condiviso il post')
+  }
+
+  input(e: Event){
+    console.log((<HTMLInputElement>e.target).value)//casting del target di event
+  }
+
+  // ciclo di vita dei componenti
   ngOnInit(): void {
     console.log('ngOnInit')
   }
